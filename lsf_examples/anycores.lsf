@@ -1,0 +1,12 @@
+#!/bin/bash
+#BSUB -q <queue>
+#BSUB -J JobName
+#BSUB -oo ./JobName.oe
+#BSUB -R order[slots]
+#BSUB -R span[hosts=-1]
+#BSUB -n <total number of MPI tasks>
+#BSUB -a mympi
+
+<exec> <args>
+
+

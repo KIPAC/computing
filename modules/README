@@ -1,0 +1,10 @@
+To use these, you need to have
+
+    module load use.own
+
+in your .bashrc or .cshrc
+
+Then you can load the modules like normal
+
+    module load gsl/1.15
+

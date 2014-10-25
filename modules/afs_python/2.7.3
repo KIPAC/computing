@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## modules afs_python
+##
+## modulefiles/afs_python
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "afs_python - setup afs_python"
+}
+
+module-whatis   "Sets the environment for using afs_python"
+
+# for Tcl script use only
+set     pyver           2.7.3
+set     basedir         /afs/slac.stanford.edu/g/ki/software/python/${pyver}/@sys
+
+conflict afs_python
+
+prepend-path PATH            $basedir/bin
+prepend-path LD_LIBRARY_PATH $basedir/lib
+prepend-path PYTHONPATH      $basedir/lib

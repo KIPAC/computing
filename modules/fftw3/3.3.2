@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## modules fftw3
+##
+## modulefiles/fftw3
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "fftw3 - setup fftw3"
+}
+
+module-whatis   "Sets the environment for using fftw3"
+
+# for Tcl script use only
+set     fftwver      3.3.2
+set     basedir     /afs/slac.stanford.edu/g/ki/software/fftw/${fftwver}/@sys
+
+conflict fftw3
+
+setenv       SLAC_FFTW3_DIR     $basedir
+setenv       SLAC_FFTW3_INC     $basedir/include
+setenv       SLAC_FFTW3_LIB     $basedir/lib
+setenv       FFTW_PATH          $basedir/lib
+prepend-path PATH               $basedir/bin
+append-path  LD_LIBRARY_PATH    $basedir/lib
+append-path  LIBRARY_PATH       $basedir/lib
+append-path  C_INCLUDE_PATH     $basedir/include

@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## modules gsl
+##
+## modulefiles/gsl
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "gsl - setup gsl"
+}
+
+module-whatis   "Sets the environment for using gsl"
+
+# for Tcl script use only
+set     gslver      1.15
+set     basedir     /afs/slac.stanford.edu/g/ki/software/gsl/${gslver}/@sys
+
+conflict gsl
+
+setenv       SLAC_GSL_DIR     $basedir
+setenv       SLAC_GSL_INC     $basedir/include
+setenv       SLAC_GSL_LIB     $basedir/lib
+prepend-path PATH             $basedir/bin
+append-path  LD_LIBRARY_PATH  $basedir/lib
+append-path  LIBRARY_PATH     $basedir/lib
+append-path  C_INCLUDE_PATH   $basedir/include

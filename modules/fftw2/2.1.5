@@ -1,0 +1,26 @@
+#%Module1.0#####################################################################
+##
+## modules fftw2
+##
+## modulefiles/fftw2
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "fftw2 - setup fftw2"
+}
+
+module-whatis   "Sets the environment for using fftw2"
+
+# for Tcl script use only
+set     fftwver      2.1.5-mpi
+set     basedir     /afs/slac.stanford.edu/g/ki/software/fftw/${fftwver}/@sys
+
+conflict fftw2
+
+setenv       SLAC_FFTW2_DIR     $basedir
+setenv       SLAC_FFTW2_INC     $basedir/include
+setenv       SLAC_FFTW2_LIB     $basedir/lib
+append-path  LD_LIBRARY_PATH    $basedir/lib
+append-path  LIBRARY_PATH       $basedir/lib
+append-path  C_INCLUDE_PATH     $basedir/include
