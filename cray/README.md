@@ -1,6 +1,6 @@
 The Cray
 ========
-The cray is located on campus at crayola.stanford.edu. You will
+The cray is located on campus at `crayola.stanford.edu`. You will
 need to ask Stuart for access.
 
 Logging In
@@ -18,7 +18,7 @@ Only this drive can be seen from the compute nodes.
 
 Environment
 -----------
-The cray has a fill module system. To use the gcc compilers,
+The cray has a full module system. To use the gcc compilers,
 put this in your .bashrc
 ```
 module swap PrgEnv-pgi PrgEnv-gnu
