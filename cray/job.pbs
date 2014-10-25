@@ -1,0 +1,8 @@
+#PBS -S /bin/bash
+#PBS -l walltime=48:00:00
+#PBS -l ncpus=<number of cpus>
+#PBS -N	jobName
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+/usr/bin/aprun -n <number of cpus> <exec> <args>
