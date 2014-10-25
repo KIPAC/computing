@@ -19,10 +19,11 @@ Only this drive can be seen from the compute nodes.
 Environment
 -----------
 The cray has a full module system. To use the gcc compilers,
-put this in your .bashrc
+put this 
 ```
 module swap PrgEnv-pgi PrgEnv-gnu
 ```
+in your `.bashrc`.
 
 Compiling Code
 --------------
