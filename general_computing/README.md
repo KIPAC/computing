@@ -8,8 +8,12 @@ can see the load on each system output from ganglia here
 
 http://ganglia.slac.stanford.edu:8080/?m=load_one&r=12_hours&s=ascending&hc=4&mc=2
 
-This can be especially useful if you nfs server is non-responsive due to a large
+This can be especially useful if your nfs server is non-responsive due to a large
 amount of I/O from a single user.
+
+Getting help
+------------
+Email `unix-admin@slac.stanford.edu`
 
 No backups
 ----------
