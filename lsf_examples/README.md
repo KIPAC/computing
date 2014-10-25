@@ -70,7 +70,7 @@ There are a few tricks for LSF that might be useful.
 
 0) All command line parameters (i.e. `-J`, etc.) can be put into a script that looks like
 ```
-#!/bin.bash
+#!/bin/bash
 #BSUB -J JobName
 ...
 ```
@@ -81,12 +81,12 @@ There are a few tricks for LSF that might be useful.
 ```
 #BSUB -u <email address>
 #mail at start
-#BSUB -N
-#mail at end
 #BSUB -B
+#mail at end
+#BSUB -N
 ```
 
-3) You can run over any cores like this
+3) You can run over any set of cores like this
 ```
 #BSUB -R order[slots]
 #BSUB -R span[hosts=-1]
@@ -121,3 +121,5 @@ it will get routed to the correct queue (medium, long, etc.). This can be done v
 ```
 #BSUB -W HH:MM
 ```
+See the [general queues](http://www.slac.stanford.edu/comp/unix/farm/gen_queue.pdf) for
+more details. 

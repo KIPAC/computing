@@ -1,3 +1,17 @@
+Getting Started
+===============
+
+Documentation
+-------------
+Try these websites
+
+http://www.slac.stanford.edu/comp/unix/unix-hpc.html
+http://kipac.stanford.edu/collab/computing
+
+Getting help
+------------
+If all else fails, email `unix-admin@slac.stanford.edu`
+
 Tips for general computing at SLAC
 ==================================
 
@@ -11,17 +25,13 @@ http://ganglia.slac.stanford.edu:8080/?m=load_one&r=12_hours&s=ascending&hc=4&mc
 This can be especially useful if your nfs server is non-responsive due to a large
 amount of I/O from a single user.
 
-Getting help
-------------
-Email `unix-admin@slac.stanford.edu`
-
 No backups
 ----------
 Data put into `nobackup` directories on NFS is not backed up.
 
 Change your afs allocation
 --------------------------
-You can increase your own afs quota for home up to 20 GB [here](https://webauth1.slac.stanford.edu/login/?RT=VEtcqWQT0uv/xh9aeS/ILez4O6FGZF0CxZB9lMmXRk9LfYaK00uBOiuxifZzQB8cKWrPrZdU655XTKk0rzZbrEfGG3Bo9FceuOmJ8Hd73pfhMv0VaCvHLtqU7JXQd+arjRefwmc1aNEJdPxz5wVlDDSIOepRipEW6HCozI4g0ZwbSmERTxA1e2EhiIpe8WWtUaxZhekj2/mEjwm3N6OaXmsc+lyKaY+uBVrXhtRwMw6WkFPHfzHj2Ax1DNZK4Ehk+9dOLBkUd8xrr0ErKRSg/rHxSHyJ1xipfuKZjsia+oeK9SHI;ST=VDPV/Fcca0ru3l8MbnOKotWaTlP9gwb8wBLB1Zrqwt9EjH5BC5bINbkgKN35hAWOf/PhRxi1A3YRy1Pt1bzTz0kHHP9CnylPA+o8lnpvaokthBSLfsoi/tCB7IsE3ooa14FbBh+f4tj8rtZcZWTrq7CEE1K4Uukn4MJJiaEw4dehEbhau08tbY4QJj1vxR4rO3HSnA==).
+You can increase your own afs quota for your home area up to 20 GB [here](https://webauth1.slac.stanford.edu/login/?RT=VEtcqWQT0uv/xh9aeS/ILez4O6FGZF0CxZB9lMmXRk9LfYaK00uBOiuxifZzQB8cKWrPrZdU655XTKk0rzZbrEfGG3Bo9FceuOmJ8Hd73pfhMv0VaCvHLtqU7JXQd+arjRefwmc1aNEJdPxz5wVlDDSIOepRipEW6HCozI4g0ZwbSmERTxA1e2EhiIpe8WWtUaxZhekj2/mEjwm3N6OaXmsc+lyKaY+uBVrXhtRwMw6WkFPHfzHj2Ax1DNZK4Ehk+9dOLBkUd8xrr0ErKRSg/rHxSHyJ1xipfuKZjsia+oeK9SHI;ST=VDPV/Fcca0ru3l8MbnOKotWaTlP9gwb8wBLB1Zrqwt9EjH5BC5bINbkgKN35hAWOf/PhRxi1A3YRy1Pt1bzTz0kHHP9CnylPA+o8lnpvaokthBSLfsoi/tCB7IsE3ooa14FbBh+f4tj8rtZcZWTrq7CEE1K4Uukn4MJJiaEw4dehEbhau08tbY4QJj1vxR4rO3HSnA==).
 
 Change your password
 --------------------
