@@ -10,8 +10,8 @@ Place the module files in a directory called `privatemodules`
 in your home area. Diffreent versions of the same package are stored
 as files in subdirectories so that
 ```
-~/privatemodules/fft2/2.1.4
-~/privatemodules/fft2/2.1.5
+~/privatemodules/fftw2/2.1.4
+~/privatemodules/fftw2/2.1.5
 ```
 are module files for `fftw2` versions 2.1.4 and 2.1.5. These are loaded via
 ```
