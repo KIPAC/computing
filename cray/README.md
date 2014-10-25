@@ -42,11 +42,11 @@ where `job.pbs` looks like
 ```
 #PBS -S /bin/bash
 #PBS -l walltime=48:00:00
-#PBS -l ncpus=16
+#PBS -l ncpus=<number of cpus>
 #PBS -N jobName
 
 cd $PBS_O_WORKDIR
-/usr/bin/aprun -n 16 <exec> <args>
+/usr/bin/aprun -n <number of cpus> <exec> <args>
 ```
 
 The command `qstat` displays the status of jobs. Some aliases
