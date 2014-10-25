@@ -3,11 +3,12 @@ Basic Usage
 Jobs are submitted via
 ```
 bsub -J <job name> -oo <combined stdout and stderr> -n <number of cores> -q <computing queue> <exec> <args>
-````
+```
 They can also be submitted via scripts with
 ```
 bsub < job.script.lsf
 ```
+See the example scripts in this directory.
 
 The command `bjobs` will give you your job status. It is useful to keep some
 aliases (for c shell)
