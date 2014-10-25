@@ -68,6 +68,13 @@ Tips and Tricks
 ---------------
 There are a few tricks for LSF that might be useful.
 
+0) All command line parameters (i.e. `-J`, etc.) can be put into a script that looks like
+```
+#!/bin.bash
+#BSUB -J JobName
+...
+```
+
 1) Put `%J` in output and error file names to have them tagged with the job number.
 
 2) You can get email when your job is complete, starts to run, etc. via
@@ -102,4 +109,15 @@ You do not need to specify `-n` or `-np`.
 #BSUB -R span[ptile=<number of cores per node>]
 ```
 
+7) You can select host types via
+```
+#BSUB -R "linux64 && rhel60 && scratch > 2"
+```
+In this case, your job will only run on hosts with 64 bit linux, RHEL6.0 and
+at least 2 GB of scratch space.
 
+8) SLAC has general computing queues. By submitting a job just with a wall time limit,
+it will get routed to the correct queue (medium, long, etc.). This can be done via
+```
+#BSUB -W HH:MM
+```
