@@ -23,6 +23,6 @@ Writing
 -------
 
 Writing a module file is not terribly hard. See the examples in
-this repo and see [http://linux.die.net/man/4/modulefile].
+this repo and see http://linux.die.net/man/4/modulefile.
 
 **Please submit new modules back to this repo via a pull request!**
