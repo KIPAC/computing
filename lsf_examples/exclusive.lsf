@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -q <queue>
+#BSUB -J JobName
+#BSUB -oo ./JobName.oe
+#BSUB -R span[ptile=<number of cores per node>]
+#BSUB -x
+#BSUB -n <total number of MPI tasks>
+#BSUB -a mympi
+
+# NOTES:
+# 1) the -x flag turns on exlusive execution (only one job on the node)
+
+<exec1> <args1>
+
