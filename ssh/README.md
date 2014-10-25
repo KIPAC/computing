@@ -11,3 +11,6 @@ can cause issues. The solution is download the SLAC known_hosts file here
 
 ftp://ftp.slac.stanford.edu/admin/known_hosts
 
+Once you merge it with your own .ssh/known_hosts file, you should not
+see any issues. As the pools change over time, you may have to repeat this.
+
