@@ -31,7 +31,7 @@ The queue name `kipac-ibq` can be replaced by any other queue name of course.
 To check in on your jobs, use `bpeek <job number>`. Specifying `-f` will follow
 the output like `tail -f`.
 
-Killing jobs is done via `bkill`. 'bkill 0' will kill all of your jobs.
+Killing jobs is done via `bkill`. `bkill 0` will kill all of your jobs.
 
 Job Arrays
 ----------
