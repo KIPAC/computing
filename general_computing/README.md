@@ -5,7 +5,7 @@ Documentation
 -------------
 Try these websites
 
-http://www.slac.stanford.edu/comp/unix/unix-hpc.html
+http://www.slac.stanford.edu/comp/unix/unix-hpc.html  
 http://kipac.stanford.edu/collab/computing
 
 Getting help
