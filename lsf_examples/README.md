@@ -34,7 +34,7 @@ Killing jobs is done via `bkill`. 'bkill 0' will kill all of your jobs.
 
 Job Arrays
 ----------
-Job arrays let you run and control lots of similar jobs. See this (website)[http://www.ccs.miami.edu/hpc/lsf/7.0.6/admin/jobarrays.html] for
+Job arrays let you run and control lots of similar jobs. See this [website](http://www.ccs.miami.edu/hpc/lsf/7.0.6/admin/jobarrays.html) for
 more details.
 
 The basic idea is that each job in the array is specified by a
