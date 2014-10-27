@@ -31,7 +31,8 @@ Data put into `nobackup` directories on NFS is not backed up.
 
 Change your afs allocation
 --------------------------
-You can increase your own afs quota for your home area up to 20 GB [here](https://www.slac.stanford.edu/comp/unix/auth/afs-self.shtml).
+You can increase your own afs quota for your home area up to 20 GB [here](https://www.slac.stanford.edu/comp/unix/auth/afs-self.shtml). For general afs information, see this 
+[webpage](https://www.slac.stanford.edu/comp/unix/afs-req.html).
 
 Change your password
 --------------------
