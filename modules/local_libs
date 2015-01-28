@@ -13,10 +13,10 @@ proc ModulesHelp { } {
 module-whatis   "Sets the environment for using libs in .local"
 
 # for Tcl script use only
-set          basedir            ~/.local
+set          basedir           $::env(HOME)/.local
 
 prepend-path  PATH              $basedir/bin
 prepend-path  LD_LIBRARY_PATH   $basedir/lib
 prepend-path  LIBRARY_PATH      $basedir/lib
 prepend-path  C_INCLUDE_PATH    $basedir/include
-prepend-path  PYTHONPATH        $basedir/lib
+prepend-path  PYTHONPATH        $basedir/lib/python2.7/site-packages
