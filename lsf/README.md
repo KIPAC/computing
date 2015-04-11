@@ -1,5 +1,7 @@
 Basic Usage
 -----------
+NOTE: See this [presentation](https://www.slac.stanford.edu/exp/glast/wb/prod/pages/installingOfflineSW/LSF_at_SLAC.pdf) for an overview of LSF from SLAC.
+
 Jobs are submitted via
 ```
 bsub -J <job name> -oo <combined stdout and stderr> -n <number of cores> -q <computing queue> <exec> <args>
