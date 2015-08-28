@@ -42,9 +42,23 @@ SLAC Public Machines
 --------------------
 A description of SLAC's public machines is [here](http://www.slac.stanford.edu/comp/unix/public-machines.html).
 
-Get your lustre quota
----------------------
+Check quota
+-----------
+### lustre quota
 Run the script `/afs/slac/package/lustre/scripts/my_lustre_quota`
+
+### AFS quota
+Run
+```
+fs listquota -human ~
+```
+
+### NFS quotas
+Running 
+```
+df -h 
+```
+from within your nfs space should return your usage and quota.
 
 Change your default login shell
 -------------------------------
@@ -54,14 +68,6 @@ Run
 ```
 This should work from most unix hosts and definitely 
 works from rhel6-64.
-
-NFS quotas
-----------
-Running 
-```
-df -h 
-```
-from within your nfs space should return your usage and quota.
 
 Intel compilers
 ----------------
