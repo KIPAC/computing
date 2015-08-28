@@ -7,7 +7,7 @@ module load use.own
 in your `.bashrc` or `.cshrc`
 
 Place the module files in a directory called `privatemodules`
-in your home area. Diffreent versions of the same package are stored
+in your home area. Different versions of the same package are stored
 as files in subdirectories so that
 ```
 ~/privatemodules/fftw2/2.1.4

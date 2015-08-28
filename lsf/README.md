@@ -97,7 +97,7 @@ There are a few tricks for LSF that might be useful.
 
 4) You can use `mpirun` in jobs by removing `#BSUB -a mympi` from scripts.
 To do this you have to submit from the head node of the system. Then you can call
-you program via
+your program via
 ```
 mpirun <exec1> <args1>
 mpirun <exec2> <args2>
