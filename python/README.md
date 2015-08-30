@@ -65,4 +65,11 @@ Python at KIPAC can be a bit tricky, but the steps below, using [miniconda](http
    pip install healpy
    ```
    
-6. You're good to go!
+6. Clean up some tarball files to save disk space:
+     
+     ```
+     conda clean -t
+     ```
+     
+
+7. You're good to go!
