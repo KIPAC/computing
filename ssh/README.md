@@ -14,3 +14,11 @@ ftp://ftp.slac.stanford.edu/admin/known_hosts
 Once you merge it with your own .ssh/known_hosts file (you can use [this script](get_slac_known_hosts.py)), you should not
 see any issues. As the pools change over time, you may have to repeat this.
 
+Fixing Server Timeouts from Campus
+----------------------------------
+If you have been having trouble with server timeouts from campus, try adding this to your `~/.ssh/config`
+```
+Host *
+ServerAliveInterval 60
+```
+
