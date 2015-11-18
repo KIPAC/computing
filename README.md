@@ -11,6 +11,10 @@ Each directory contains a `README.md` file with notes. The
 files in each directory are examples. The directories themselves
 serve as a table of contents.
 
+Official Documentation
+----------------------
+See the [official documentation](https://confluence.slac.stanford.edu/display/KIPAC/Computing) too!
+
 Contributing
 ------------
 This documentation will only get better if it
