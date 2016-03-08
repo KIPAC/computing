@@ -21,4 +21,7 @@ KIPAC Specific Sherlock-isms
 
 3. There is more permantent space for KIPAC computing at `/share/PI/kipac`. This space can be accessed automatically via the `$PI_HOME` environment variable. 
 
+Transferring Data
+-----------------
 
+Sherlock has Globus access through the data transfer node (DTN). See this [page](http://sherlock.stanford.edu/mediawiki/index.php/DTN) for documentation. You can also use standard tools like `bbcp`, `scp` and `rsync`.
