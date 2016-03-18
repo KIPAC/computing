@@ -37,7 +37,7 @@ Killing jobs is done via `bkill`. `bkill 0` will kill all of your jobs.
 
 Job Arrays
 ----------
-Job arrays let you run and control lots of similar jobs. See this [website](http://www.ccs.miami.edu/hpc/lsf/7.0.6/admin/jobarrays.html) for
+Job arrays let you run and control lots of similar jobs. See this [website](https://www.ibm.com/support/knowledgecenter/SSETD4_9.1.3/lsf_admin/job_arrays_lsf.dita) for
 more details.
 
 The basic idea is that each job in the array is specified by a
@@ -123,5 +123,5 @@ it will get routed to the correct queue (medium, long, etc.). This can be done v
 ```
 #BSUB -W HH:MM
 ```
-See the [general queues](http://www.slac.stanford.edu/comp/unix/farm/gen_queue.pdf) for
+See the [general queues](https://confluence.slac.stanford.edu/display/SCSPub/High+Performance+Computing+at+SLAC) for
 more details. 
