@@ -134,7 +134,7 @@ It is important to monitor resource usage when you are running a large number of
 One of the most useful tools for monitoring resource usage is the [Ganglia](http://ganglia.sourceforge.net/) monitoring system. SLAC has Ganglia monitoring setup for almost everything (fileservers, interactive nodes, batch nodes, etc.); however, it can sometimes be hard to find what you are looking for. Below are a set of resources to help.
 
 
-## Fileservers
+### Fileservers
 
 Overloading the I/O of the SLAC fileservers is the single largest point of stress for batch computing. SLAC hosts several different types of filesystems (afs, nfs, gpfs, etc.) and each has it's own advantages, disadvantages, and limitations (Tom Glanzman wrote a great breakdown [here](https://confluence.slac.stanford.edu/x/KY_PCg#BestPracticesforUsingtheSLACBatchSystem-GeneralGuidelinesforUsingRemoteFileServers)). To figure out what fileserver resources your jobs will be hitting, change to the directories where you will be reading/writing data and run `df -h .`. The output will tell you the fileserver, usage, and mount point of that directory. Several examples are shown below:
 
@@ -165,7 +165,7 @@ Now that we know the fileserver, we'd like to use Ganglia to track our usage. Un
 * [wain](http://ganglia.slac.stanford.edu:8080/ganglia/fileservers/?r=12_hours&s=descending&c=nfs-wain-kipac) - many old `/nfs/g/ki/` mounts 
 * [ki-nfs](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/?r=12_hours&s=descending&c=nfs-rhel-kipac) - newer `/nfs/g/ki` mounts
 
-## Compute Nodes
+### Compute Nodes
 
 You can find compute node usage through Ganglia as well. This can be useful for monitoring the load on interactive and/or cluster machines, specifically if a large number of nodes are down.
 
