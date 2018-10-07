@@ -125,3 +125,51 @@ it will get routed to the correct queue (medium, long, etc.). This can be done v
 ```
 See the [general queues](https://confluence.slac.stanford.edu/display/SCSPub/High+Performance+Computing+at+SLAC) for
 more details. 
+
+Resource Monitoring
+-------------------
+
+It is important to monitor resource usage when you are running a large number of jobs. A good introduction to batch computing resource monitoring was written for the Fermi Collaboration and can be found [here](https://confluence.slac.stanford.edu/x/KY_PCg). 
+
+One of the most useful tools for monitoring resource usage is the [Ganglia](http://ganglia.sourceforge.net/) monitoring system. SLAC has Ganglia monitoring setup for almost everything (fileservers, interactive nodes, batch nodes, etc.); however, it can sometimes be hard to find what you are looking for. Below are a set of resources to help.
+
+
+## Fileservers
+
+Overloading the I/O of the SLAC fileservers is the single largest point of stress for batch computing. SLAC hosts several different types of filesystems (afs, nfs, gpfs, etc.) and each has it's own advantages, disadvantages, and limitations (Tom Glanzman wrote a great breakdown [here](https://confluence.slac.stanford.edu/x/KY_PCg#BestPracticesforUsingtheSLACBatchSystem-GeneralGuidelinesforUsingRemoteFileServers)). To figure out what fileserver resources your jobs will be hitting, change to the directories where you will be reading/writing data and run `df -h .`. The output will tell you the fileserver, usage, and mount point of that directory. Several examples are shown below:
+
+```
+cd $HOME
+df -h .
+Filesystem      Size  Used Avail Use% Mounted on
+AFS             8.6G     0  8.6G   0% /afs
+
+cd /nfs/slac/g/ki/ki03/kadrlica
+df -h .
+Filesystem            Size  Used Avail Use% Mounted on
+wain002:/g.ki.ki03/kadrlica
+                      300G  284G   17G  95% /nfs/slac/g/ki/ki03/kadrlica
+
+cd /nfs/slac/g/ki/ki19
+df -h .
+Filesystem           Size  Used Avail Use% Mounted on
+ki-nfs02:/g.ki.ki19   86T   80T  6.2T  93% /nfs/slac/g/ki/ki19
+```
+
+Note that not all subdirectories 
+
+Now that we know the fileserver, we'd like to use Ganglia to track our usage. Unfortunately, it is not always straight forward to find the appropriate webpage. For the most part you can find the information you need from the [alldomains](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/) Ganglia page, but to we've also listed some of the most common resources:
+
+* [alldomains](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/) - This is where to start if you don't know where you are going
+* [afs](http://ganglia.slac.stanford.edu:8080/ganglia/fileservers/?r=12_hours&s=descending&c=afs) - your home directory
+* [wain](http://ganglia.slac.stanford.edu:8080/ganglia/fileservers/?r=12_hours&s=descending&c=nfs-wain-kipac) - many old `/nfs/g/ki/` mounts 
+* [ki-nfs](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/?r=12_hours&s=descending&c=nfs-rhel-kipac) - newer `/nfs/g/ki` mounts
+
+## Compute Nodes
+
+You can find compute node usage through Ganglia as well. This can be useful for monitoring the load on interactive and/or cluster machines, specifically if a large number of nodes are down.
+
+* [rhel6-64](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/?r=12_hours&s=descending&c=rhel6-64) - interactive nodes running rhel6-64bit
+* [ki-ls](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/?r=12_hours&s=descending&c=ki-ls) - interactive kipac nodes
+* [bullet](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/?r=12_hours&s=descending&c=bullet) - bullet mpi cluster
+* [hequ](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/?r=12_hours&s=descending&c=hequ) - hequ batch nodes (other nodes such as `deft`, `fell`, etc. can be found similarly)
