@@ -143,6 +143,8 @@ cd $HOME
 df -h .
 Filesystem      Size  Used Avail Use% Mounted on
 AFS             8.6G     0  8.6G   0% /afs
+fs whereis .
+File . is on host yfs03.slac.stanford.edu 
 
 cd /nfs/slac/g/ki/ki03/kadrlica
 df -h .
@@ -155,8 +157,6 @@ df -h .
 Filesystem           Size  Used Avail Use% Mounted on
 ki-nfs02:/g.ki.ki19   86T   80T  6.2T  93% /nfs/slac/g/ki/ki19
 ```
-
-Note that not all subdirectories 
 
 Now that we know the fileserver, we'd like to use Ganglia to track our usage. Unfortunately, it is not always straight forward to find the appropriate webpage. For the most part you can find the information you need from the [alldomains](http://ganglia.slac.stanford.edu:8080/ganglia/alldomains/) Ganglia page, but to we've also listed some of the most common resources:
 
