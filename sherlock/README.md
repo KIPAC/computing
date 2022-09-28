@@ -1,15 +1,12 @@
-Getting Started
-===============
+# Getting Started
 
 [Sherlock](https://www.sherlock.stanford.edu/) is a high-performance shared computing cluster for research at Stanford.
 
-Documentation
--------------
+## Documentation
 
 Documentation is available [here](https://www.sherlock.stanford.edu/docs/).
 
-Getting help
-------------
+## Getting help
 
 The official way to get support with Sherlock is to email srcc-support@stanford.edu.
 
@@ -18,8 +15,7 @@ The #sherlock-announce and #sherlock-users Slack channels (accessible from any S
 The SRCC also runs office hours over Zoom since the COVID-19 pandemic.
 Please see [here](https://www.sherlock.stanford.edu/docs/#office-hours) for details.
 
-KIPAC Specific Sherlock-isms
-----------------------------
+## KIPAC Specific Oak Resources
 
 KIPAC resources at Sherlock:
 ```
@@ -47,7 +43,6 @@ Individual PI groups may have additional resources.
 
 KIPAC Oak storage is also accessible from Sherlock; please see the Oak documentation for more information.
 
-Transferring Data
------------------
+## Transferring Data
 
 Sherlock has Globus access through the data transfer node (DTN). See this [page](https://www.sherlock.stanford.edu/docs/storage/data-transfer/#transfer-protocols) for documentation. You can also use standard tools like `bbcp`, `scp` and `rsync`.
