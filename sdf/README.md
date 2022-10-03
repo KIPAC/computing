@@ -12,6 +12,9 @@ For general help or reporting problems, please email s3df-help@slac.stanford.edu
 
 For general discussion, please see the #comp-sdf channel on the SLAC Slack workspace.
 
+## Getting an Account
+
+The SDF is available to SLAC users via their Windows account credentials.
 
 ## KIPAC Specific Resources
 
