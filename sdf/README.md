@@ -28,3 +28,23 @@ kipac        up 10-00:00:0      108/0/6/114 rome[0001-0004,0011-0014,0021-0024,0
 ## Note About S3DF
 
 Please note that the SLAC systems are upgrading from SDF to [S3DF](https://s3df.slac.stanford.edu/public/doc/#/); for now, KIPAC owns resources on SDF.
+
+## Tips and Tricks
+
+For the modules on SDF, there are two versions of `gcc` installed. The default C compiler is set to 9.x.x (x for me not remembering the exact version) which is a newer version.
+However, if one uses openmpi for parallelization, openmpi is installed with the older `gcc` version 4.8.5.
+So
+```
+module load gcc
+module load openmpi
+```
+would crash, since the `gcc` versions conflict by default.
+One would need to do
+```
+module unload gcc
+module unload openmpi
+module load gcc/4.8.6
+module load openmpi/4.0.4-gcc-4.8.5
+```
+to correctly start parallel C programs that use MPI.
+A bit inconvenient but this works -- Richie
