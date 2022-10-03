@@ -15,6 +15,11 @@ The #sherlock-announce and #sherlock-users Slack channels (accessible from any S
 The SRCC also runs office hours over Zoom since the COVID-19 pandemic.
 Please see [here](https://www.sherlock.stanford.edu/docs/#office-hours) for details.
 
+## Getting an Account
+
+To request an account on Sherlock, the sponsoring Stanford faculty member should email srcc-support@stanford.edu, specifying the names and SUNet IDs of their research team members needing an account.
+Risa then needs to approve access to KIPAC resources.
+
 ## KIPAC Specific Oak Resources
 
 KIPAC resources at Sherlock:
@@ -38,8 +43,6 @@ $ sh_part
     owners  qg   5785  38172  13595   6927     20   1254 ||      4     48     2 hour     2 days   20-128   128-4096 owners gpu:4(S:0-1)(67),gpu:8(S:0-1)(13),gpu:4(S:0)(5),gpu:4(S:0-3)(6),gpu:8(S:0-3)(8),gpu:4(2)
 
 ```
-
-Individual PI groups may have additional resources.
 
 KIPAC Oak storage is also accessible from Sherlock; please see the Oak documentation for more information.
 
