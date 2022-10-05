@@ -43,9 +43,16 @@ $ sh_part
     owners  qg   5785  38172  13595   6927     20   1254 ||      4     48     2 hour     2 days   20-128   128-4096 owners gpu:4(S:0-1)(67),gpu:8(S:0-1)(13),gpu:4(S:0)(5),gpu:4(S:0-3)(6),gpu:8(S:0-3)(8),gpu:4(2)
 
 ```
+The `kipac` queue will likely be your workhorse. You may find the `bigmem` and `gpu` nodes useful for memory intensive applications or applications requiring GPUs (respectively, of course). The `hns` queue is the humanities and sciences partition, and may also be useful if the `kipac` queue is particularly busy. See the Sherlock documentation for more information.
 
 KIPAC Oak storage is also accessible from Sherlock; please see the Oak documentation for more information.
 
 ## Transferring Data
 
 Sherlock has Globus access through the data transfer node (DTN). See this [page](https://www.sherlock.stanford.edu/docs/storage/data-transfer/#transfer-protocols) for documentation. You can also use standard tools like `bbcp`, `scp` and `rsync`.
+
+To get you started, here is an example using `scp`. Suppose your SUNet ID is `alice` and you want to transfer the file `data.zip` in your current directory to a directory named `project` in your home directory on Sherlock. The scp command to carry this out would be
+```
+scp data.zip alice@dtn.sherlock.stanford.edu:~/project/
+```
+Most importantly, you should not make (any, but particularly large) data transfers through the login endpoints. They are slower than through the DTN (data transfer node) and will disconnect after some timeout period. It is also more convenient to transfer through the DTN, as it (at the time of this writing) does not require duo mobile 2fa.
