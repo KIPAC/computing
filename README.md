@@ -12,7 +12,7 @@ The directories themselves serve as a table of contents.
 
 ## Official Documentation
 
-See the [official documentation](https://confluence.slac.stanford.edu/display/KIPAC/Computing) too!
+Coming soon! ~~See the [official documentation](https://confluence.slac.stanford.edu/display/KIPAC/Computing) too!~~
 
 ## Contributing
 
