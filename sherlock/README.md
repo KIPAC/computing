@@ -20,7 +20,7 @@ Please see [here](https://www.sherlock.stanford.edu/docs/#office-hours) for deta
 To request an account on Sherlock, the sponsoring Stanford faculty member should email srcc-support@stanford.edu, specifying the names and SUNet IDs of their research team members needing an account.
 Risa then needs to approve access to KIPAC resources.
 
-## KIPAC Specific Oak Resources
+## KIPAC Specific Sherlock Resources
 
 KIPAC resources at Sherlock:
 ```
@@ -32,18 +32,20 @@ kipac        up 7-00:00:00      112/0/0/112 sh02-03n[45-72],sh03-03n[01-72],sh03
 KIPAC members access to a number of other partition queues as well:
 ```
 $ sh_part
-     QUEUE STA   FREE  TOTAL RESORC  OTHER   FREE  TOTAL || DEFMEM MAXMEM    DEFAULT    MAXIMUM    CORES       NODE    QOS  GRES
- PARTITION TUS  CORES  CORES PENDNG PENDNG  NODES  NODES || GB/CPU GB/CPU   JOB-TIME   JOB-TIME    /NODE     MEM-GB   NAME (NODE-COUNT)
-    normal  *q     61   4032  18738   2065      0    154 ||      6      8     2 hour     7 days    20-32    128-256      - -
-    bigmem   q    170    408      0      0      0      5 ||      8     64     2 hour     1 days   32-128   512-4096 bigmem -
-       dev   q     32     40      0      0      1      2 ||      6      6     1 hour     2 hour       20        128    dev -
-       gpu   q    287    748    165    100      0     26 ||      7     12     1 hour     2 days    20-32    191-256    gpu gpu:4(S:0-1)(20),gpu:4(S:0)(6)
-       hns   g   1634   3216   1944    491      0     95 ||      6     25     2 hour     7 days   20-128   128-1024  owner -
-     kipac   g     74   3360      0      0      0    112 ||      7      8     2 hour     7 days    24-32    191-256  owner -
-    owners  qg   5785  38172  13595   6927     20   1254 ||      4     48     2 hour     2 days   20-128   128-4096 owners gpu:4(S:0-1)(67),gpu:8(S:0-1)(13),gpu:4(S:0)(5),gpu:4(S:0-3)(6),gpu:8(S:0-3)(8),gpu:4(2)
-
+ partition           || nodes         | CPU cores             | GPUs                 || job runtime     | mem/core        | per-node
+ name         public ||   idle  total |   idle  total  queued |   idle  total queued || default maximum | default maximum |    cores   mem(GB)  gpus
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+ normal*      yes    ||      0    195 |     38   5236    1589 |      0      0      0 ||      2h      7d |     6GB     8GB |    20-32   128-256     0
+ bigmem       yes    ||      3      9 |    324    504       1 |      0      0      0 ||      2h      1d |     8GB    64GB |   24-128  384-4096     0
+ gpu          yes    ||      0     26 |    242    748     381 |     17    104    189 ||      1h      2d |     8GB    13GB |    20-32   191-256     4
+ dev          yes    ||      1      4 |     83    104       1 |     63     64      0 ||      1h      2h |     6GB     8GB |    20-32   128-256  0-32
+ kipac        no     ||      0    112 |     58   3360    6144 |      0      0      0 ||      2h      7d |     8GB     8GB |    24-32   191-256     0
+ hns          no     ||      0    105 |    434   3728     274 |      0      0      0 ||      2h      7d |     6GB    26GB |   20-128  128-1024     0
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+ owners       no     ||      5   1496 |   3645  48808   63782 |    355    684   2823 ||      2h      2d |     4GB    48GB |   20-128  128-4096   0-8
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 ```
-The `kipac` queue will likely be your workhorse. You may find the `bigmem` and `gpu` nodes useful for memory intensive applications or applications requiring GPUs (respectively, of course). The `hns` queue is the humanities and sciences partition, and may also be useful if the `kipac` queue is particularly busy. See the Sherlock documentation for more information.
+The `kipac` queue will likely be your workhorse. You may find the `bigmem` and `gpu` nodes useful for memory intensive applications or applications requiring GPUs. The `owners` and `hns` queues may also be useful if the `kipac` queue is particularly busy. See the Sherlock documentation for more information.
 
 KIPAC Oak storage is also accessible from Sherlock; please see the Oak documentation for more information.
 
