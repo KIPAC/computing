@@ -16,4 +16,4 @@ KIPAC currently owns 1PB on Oak.
 Please see the [OAK Group Usage Dashboard](https://srcc-lookout.stanford.edu/oak/o-kipac/?orgId=1&refresh=10m) for KIPAC for details on resource usage.
 
 Oak storage is mounted on Sherlock and accessible through `$OAK`.
-Please contact Phil Mansfield, Glen Morris, or Risa Wechsler for permissions access to KIPAC's Oak storage.
+Please contact Marcelo Alvarez for permissions access to KIPAC's Oak storage.
