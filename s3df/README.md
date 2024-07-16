@@ -14,7 +14,7 @@ For general discussion see the #comp-sdf channel on the SLAC Slack workspace.
 
 ## Getting an Account
 
-If you are a SLAC employee or affiliated researcher (i.e. with KIPAC) with a SLAC Unix account, you are eligible for an S3DF account. To enable your S3DF account, log into [coacct]() using your SLAC Unix credentials and follow the instructions to request membership in the KIPAC S3DF facility.
+If you are a SLAC employee or affiliated researcher (i.e. with KIPAC) with a SLAC Unix account, you are eligible for an S3DF account. To enable your S3DF account, log into [coacct](https://coact.slac.stanford.edu/) using your SLAC Unix credentials and follow the instructions to request membership in the KIPAC S3DF facility.
 
 ## KIPAC Specific Resources
 
