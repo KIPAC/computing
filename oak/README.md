@@ -1,4 +1,4 @@
-# Getting Started
+# Getting started with Oak
 
 [Oak](https://uit.stanford.edu/service/oak-storage) is a high-performance computing storage system at Stanford and mounted on Sherlock.
 
