@@ -1,4 +1,4 @@
-# Getting Started
+# Getting started with S3DF
 
 The [SLAC Shared Science Data Facility (S3DF)](https://s3df.slac.stanford.edu) is a compute, storage and network facility supporting SLAC science.
 
