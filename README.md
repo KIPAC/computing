@@ -16,7 +16,7 @@ See the Oak [README](oak/README.md) and examples for more details.
 
 ## Contributing
 
-This documentation will only get better if it is maintained. Please fork this repo, add new revisions, and then submit a pull request!
+This documentation will only get better if it is maintained. Please fork this [repo](https://github.com/KIPAC/computing), add new revisions, and then submit a pull request!
 
 ## General Help
 
