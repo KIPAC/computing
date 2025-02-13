@@ -21,5 +21,4 @@ This documentation will only get better if it is maintained. Please fork this [r
 
 ## General Help
 
-Please see the #kipac-computing Slack channel on the Stanford University organization for help and general discussion about KIPAC computing resources.
-For specific questions and requesting account access on Oak, please contact Marcelo Alvarez.
+Please see the #kipac-computing Slack channel on the Stanford University organization for help and general discussion about KIPAC computing resources. For specific questions, including requesting access to Oak or the KIPAC Github organization, please contact Marcelo Alvarez.
