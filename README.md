@@ -1,6 +1,7 @@
 # KIPAC Computing
 
-This repo contains documentation for KIPAC's computing allocations at SLAC and Stanford.
+This site contains documentation for KIPAC's computing allocations at SLAC and Stanford.
+For general information about computing at KIPAC, please see [kipac.stanford.edu/resources/computing](https://kipac.stanford.edu/resources/computing).
 
 ## S3DF
 [The SLAC Shared Science Data Facility (S3DF)](https://s3df.slac.stanford.edu/) is the primary compute, storage and network facility at SLAC.\
