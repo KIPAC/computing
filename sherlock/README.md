@@ -1,4 +1,4 @@
-# Getting Started
+# Getting started with Sherlock
 
 [Sherlock](https://www.sherlock.stanford.edu/) is a high-performance shared computing cluster for research at Stanford.
 
