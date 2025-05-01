@@ -31,4 +31,8 @@ No compute tasks should be done on the login nodes since those are meant to oper
 % ssh username@s3dflogin.slac.stanford.edu
 % ssh iana
 ```
-
+Should you need dedicated resources for an interactive job, you can use, e.g.
+```
+srun --partition roma --account kipac:kipac -n 1 --time=01:00:00 --mem-per-cpu=16G --pty /bin/bash
+```
+Note the `<facility>:<repo>` repo pattern (where both are `kipac`) and the use of `--partition roma` (KIPAC has dedicated nodes on) which together should help reduce queue times, whether the jobs are interactive or not. See [here](https://s3df.slac.stanford.edu/#/batch-compute) for more details.
