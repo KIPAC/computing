@@ -14,7 +14,9 @@ For general discussion see the #comp-sdf channel on the SLAC Slack workspace.
 
 ## Getting an Account
 
-If you are a SLAC employee or affiliated researcher (i.e. with KIPAC) with a SLAC Unix account, you are eligible for an S3DF account. To enable your S3DF account, log into [coact](https://coact.slac.stanford.edu/) using your SLAC Unix credentials and follow the instructions to request membership in the KIPAC S3DF facility.
+If you are a SLAC employee or affiliated researcher (i.e. with KIPAC) with a SLAC computing account, you are eligible for an S3DF account. To enable your S3DF account, log into [coact](https://coact.slac.stanford.edu/) using your SLAC computing credentials and follow the instructions to request membership in the KIPAC S3DF facility. 
+
+(Note that S3DF is presently in a transition from Unix to SSO/ActiveDirectory authentication for all S3DF web and SSH bastions anticipated to be complete in the Fall of 2025. Unix account passwords will not work with S3DF services after the transition. If you currently only have a Unix account you can provision your SSO/ActiveDirectory account via a self-service portal at [https://ad-account.slac.stanford.edu](https://ad-account.slac.stanford.edu) using your Unix account and follow the directions to create your SSO/ActiveDirectory account.)
 
 ## KIPAC Specific Resources
 
