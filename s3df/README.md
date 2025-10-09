@@ -20,13 +20,13 @@ If you are a SLAC employee or affiliated researcher (i.e. with KIPAC) with a SLA
 
 ## KIPAC Specific Resources
 
-There are 3 [clusters](https://s3df.slac.stanford.edu/public/doc/#/batch-compute?id=clusters-amp-repos) (–partitions in Slurm terminology) at S3DF: Roma, Milano, and Ampere (GPU). KIPAC facility S3DF members have priority access (non-preemptable jobs) on 20 Roma nodes. Each Roma node has 128 AMD EPYC 7702 cores and 512 GB RAM. KIPAC facility S3DF members can also run low-priority preemptable jobs on Milano and the GPU cluster Ampere.
+There are 3 [clusters](https://s3df.slac.stanford.edu/public/doc/#/batch-compute?id=clusters-amp-repos) (–partitions in Slurm terminology) at S3DF: Roma, Milano, and Ampere (GPU). KIPAC facility S3DF members have priority access (non-preemptable jobs) on 20 Roma nodes and 4 Milano large memory nodes. Each Roma node has 128 AMD EPYC 7702 cores and 512 GB RAM. KIPAC facility S3DF members can also run low-priority preemptable jobs on Milano and the GPU cluster Ampere.
 
-## Note About S3DF data storage for KIPAC
+## S3DF data storage for KIPAC
 
-KIPAC is currently in the process of obtaining over 1PB in new data storage on S3DF. In the meantime we are handling data storage requests on a case-by-case basis. If you need more storage than available in your home directory or `/sdf/scratch/kipac/`, please submit a ticket describing your storage needs [here](https://slacprod.servicenowservices.com/gethelp.do).
+Directories in /sdf/data/kipac/u are intended for the exclusive use of each corresponding user. Please only write to the directory that corresponds to your username, and keep all files and subdirectories group-readable so we can track usage within the group. The current default limit is 1TB for each user. This limit may increase in the future as we increase capacity and/or free up space. If you need more than the current limit, please contact Marcelo Alvarez with your request so we can coordinate and increase your quota if necessary.
 
-## Tips and Tricks
+# Computing Environment 
 
 No compute tasks should be done on the login nodes since those are meant to operate only as bastion hosts, not for doing analysis or accessing data. Instead, use the "iana" pool of interactive nodes. A typical login session would be:
 ```
@@ -35,6 +35,6 @@ No compute tasks should be done on the login nodes since those are meant to oper
 ```
 Should you need dedicated resources for an interactive job, you can use, e.g.
 ```
-srun --partition roma --account kipac:kipac -n 1 --time=01:00:00 --mem-per-cpu=16G --pty /bin/bash
+srun --account kipac:kipac -n 1 --time=01:00:00 --mem-per-cpu=16G --pty /bin/bash
 ```
-Note the `<facility>:<repo>` repo pattern (where both are `kipac`) and the use of `--partition roma` (KIPAC has dedicated nodes on roma) which together should help reduce queue times, whether the jobs are interactive or not. See [here](https://s3df.slac.stanford.edu/#/batch-compute) for more details.
+Note the `<facility>:<repo>` repo pattern (where both are `kipac`) which should help reduce queue times and prevent preemption, whether the jobs are interactive or not. See [here](https://s3df.slac.stanford.edu/#/batch-compute) for more details.
