@@ -20,7 +20,20 @@ If you are a SLAC employee or affiliated researcher (i.e. with KIPAC) with a SLA
 
 ## KIPAC Specific Resources
 
-There are 3 [clusters](https://s3df.slac.stanford.edu/public/doc/#/batch-compute?id=clusters-amp-repos) (–partitions in Slurm terminology) at S3DF: Roma, Milano, and Ampere (GPU). KIPAC facility S3DF members have priority access (non-preemptable jobs) on 20 Roma nodes and 4 Milano large memory nodes. Each Roma node has 128 AMD EPYC 7702 cores and 512 GB RAM. KIPAC facility S3DF members can also run low-priority preemptable jobs on Milano and the GPU cluster Ampere.
+KIPAC members have access to five Slurm partitions: `ada`, `ampere`, `hopper`, `milano`, and `roma`.
+
+Current partition hardware summary:
+
+| Partition | Nodes | KIPAC nodes | CPUs | RAM | GPUs |
+|---|---:|---:|---:|---:|---:|
+| `ada` | 19 | 0.5 | 96 | 702 GB | 10 x L40S |
+| `ampere` | 42 | 0 | 128 | 952 GB | 4 x A100 |
+| `hopper` | 3 | 1 | 256 | 1344 GB | 4 x H200 |
+| `milano` (480 GB) | 268 | 0 | 128 | 480 GB | none |
+| `milano` (1920 GB) | 4 | 4 | 128 | 1920 GB | none |
+| `roma` | 130 | 20 | 128 | 480 GB | none |
+
+The 4 high-memory Milano nodes are `sdfmilan269-272` (1920 GB each).
 
 ## S3DF data storage for KIPAC
 
@@ -35,6 +48,70 @@ No compute tasks should be done on the login nodes since those are meant to oper
 ```
 Should you need dedicated resources for an interactive job, you can use, e.g.
 ```
-srun --account kipac:kipac -n 1 --time=01:00:00 --mem-per-cpu=16G --pty /bin/bash
+srun --account kipac:kipac --partition roma --qos=normal --cpus-per-task=1 --mem=256G --time=00:10:00 --pty /bin/bash
 ```
 Note the `<facility>:<repo>` repo pattern (where both are `kipac`) which should help reduce queue times and prevent preemption, whether the jobs are interactive or not. See [here](https://s3df.slac.stanford.edu/#/batch-compute) for more details.
+
+## Minimal Batch Script Example (Hopper)
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=hopper_test
+#SBATCH --account=kipac:kipac
+#SBATCH --partition=hopper
+#SBATCH --qos=normal
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=256G
+#SBATCH --time=00:10:00
+
+set -euo pipefail
+nvidia-smi
+hostname
+```
+
+Submit with:
+
+```bash
+sbatch hopper_test.slurm
+```
+
+For other partitions, change the same flags (`--partition`, `--qos`, and `--gres` for GPU vs CPU-only), as shown in the `srun`/`salloc` examples below.
+
+## Interactive Slurm Command Templates
+
+Use `--account kipac:kipac` for KIPAC allocation, request one CPU explicitly with `--cpus-per-task=1`, and request 256 GB with `--mem=256G`.
+
+GPU partitions (`1 GPU + 1 CPU + 256 GB`):
+
+```bash
+# ada (L40S)
+srun   --account kipac:kipac --partition ada    --qos=normal      --gres=gpu:1 --cpus-per-task=1 --mem=256G --time=00:10:00 --pty /bin/bash
+salloc --account kipac:kipac --partition ada    --qos=normal      --gres=gpu:1 --cpus-per-task=1 --mem=256G --time=00:10:00
+
+# ampere (A100) - preemptable QoS for kipac:kipac
+srun   --account kipac:kipac --partition ampere --qos=preemptable --gres=gpu:1 --cpus-per-task=1 --mem=256G --time=00:10:00 --pty /bin/bash
+salloc --account kipac:kipac --partition ampere --qos=preemptable --gres=gpu:1 --cpus-per-task=1 --mem=256G --time=00:10:00
+
+# hopper (H200)
+srun   --account kipac:kipac --partition hopper --qos=normal      --gres=gpu:1 --cpus-per-task=1 --mem=256G --time=00:10:00 --pty /bin/bash
+salloc --account kipac:kipac --partition hopper --qos=normal      --gres=gpu:1 --cpus-per-task=1 --mem=256G --time=00:10:00
+```
+
+CPU-only partitions (`1 CPU + 256 GB`):
+
+```bash
+# milano
+srun   --account kipac:kipac --partition milano --qos=normal --cpus-per-task=1 --mem=256G --time=00:10:00 --pty /bin/bash
+salloc --account kipac:kipac --partition milano --qos=normal --cpus-per-task=1 --mem=256G --time=00:10:00
+
+# roma
+srun   --account kipac:kipac --partition roma   --qos=normal --cpus-per-task=1 --mem=256G --time=00:10:00 --pty /bin/bash
+salloc --account kipac:kipac --partition roma   --qos=normal --cpus-per-task=1 --mem=256G --time=00:10:00
+```
+
+To target only high-memory Milano nodes, add:
+
+```bash
+--constraint='MEM_SZE:1920GB'
+```
