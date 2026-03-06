@@ -52,6 +52,32 @@ srun --account kipac:kipac --partition roma --qos=normal --cpus-per-task=1 --mem
 ```
 Note the `<facility>:<repo>` repo pattern (where both are `kipac`) which should help reduce queue times and prevent preemption, whether the jobs are interactive or not. See [here](https://s3df.slac.stanford.edu/#/batch-compute) for more details.
 
+## Minimal Batch Script Example (Hopper)
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=hopper_test
+#SBATCH --account=kipac:kipac
+#SBATCH --partition=hopper
+#SBATCH --qos=normal
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=256G
+#SBATCH --time=00:10:00
+
+set -euo pipefail
+nvidia-smi
+hostname
+```
+
+Submit with:
+
+```bash
+sbatch hopper_test.slurm
+```
+
+For other partitions, change the same flags (`--partition`, `--qos`, and `--gres` for GPU vs CPU-only), as shown in the `srun`/`salloc` examples below.
+
 ## Interactive Slurm Command Templates
 
 Use `--account kipac:kipac` for KIPAC allocation, request one CPU explicitly with `--cpus-per-task=1`, and request 256 GB with `--mem=256G`.
