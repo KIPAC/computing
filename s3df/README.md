@@ -24,13 +24,14 @@ KIPAC members have access to five Slurm partitions: `ada`, `ampere`, `hopper`, `
 
 Current partition hardware summary:
 
-| Partition | Nodes | CPU / node | Memory / node | GPU / node | Notes |
-|---|---:|---:|---:|---:|---|
-| `ada` | 19 | 96 | 702 GB | 10 x L40S | GPU partition |
-| `ampere` | 42 | 128 | 952 GB | 4 x A100 | GPU partition |
-| `hopper` | 3 | 256 | 1344 GB | 4 x H200 | GPU partition |
-| `milano` | 272 | 128 | 480 GB (268 nodes), 1920 GB (4 nodes) | none | CPU-only partition |
-| `roma` | 130 | 128 | 480 GB | none | CPU-only partition |
+| Partition | Nodes | KIPAC nodes | CPUs | Memory / node | GPUs |
+|---|---:|---:|---:|---:|---:|
+| `ada` | 19 | 0 | 96 | 702 GB | 10 x L40S |
+| `ampere` | 42 | 0 | 128 | 952 GB | 4 x A100 |
+| `hopper` | 3 | 0 | 256 | 1344 GB | 4 x H200 |
+| `milano` (480 GB) | 268 | 0 | 128 | 480 GB | none |
+| `milano` (1920 GB) | 4 | 4 | 128 | 1920 GB | none |
+| `roma` | 130 | 13 | 128 | 480 GB | none |
 
 The 4 high-memory Milano nodes are `sdfmilan269-272` (1920 GB each).
 
