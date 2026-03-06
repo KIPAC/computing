@@ -24,7 +24,7 @@ KIPAC members have access to five Slurm partitions: `ada`, `ampere`, `hopper`, `
 
 Current partition hardware summary:
 
-| Partition | Nodes | KIPAC nodes | CPUs | Memory / node | GPUs |
+| Partition | Nodes | KIPAC nodes | CPUs | RAM | GPUs |
 |---|---:|---:|---:|---:|---:|
 | `ada` | 19 | 0.5 | 96 | 702 GB | 10 x L40S |
 | `ampere` | 42 | 0 | 128 | 952 GB | 4 x A100 |
