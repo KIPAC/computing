@@ -11,6 +11,10 @@ See the S3DF [README](s3df/README.md) for more information.
 [Sherlock](https://www.sherlock.stanford.edu/) is a high-performance shared computing cluster for research at Stanford.\
 See the Sherlock [README](sherlock/README.md) for more information.
 
+## Marlowe
+[Marlowe](https://marlowe-research.stanford.edu/) is Stanford's GPU cluster, an NVIDIA DGX H100 SuperPOD available to Stanford faculty and their groups.\
+See the Marlowe [README](marlowe/README.md) for more information.
+
 ## Oak
 [Oak](https://uit.stanford.edu/service/oak-storage)  is a high-performance computing storage system at Stanford and mounted on Sherlock.\
 See the Oak [README](oak/README.md) and examples for more details.
